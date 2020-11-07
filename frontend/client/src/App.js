@@ -7,18 +7,6 @@ import {
 import Dashboard from './pages/dashboard'
 
 function App() {
-  // const Circle = () => {
-  //   return (
-  //     <svg>
-  //       <circle
-  //         cx="150"
-  //         cy="77"
-  //         r="40"
-  //       />
-  //     </svg>
-  //   )
-  // }
-
   return (
       <Router>
         <Switch>
