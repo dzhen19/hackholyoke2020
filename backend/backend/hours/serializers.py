@@ -5,4 +5,4 @@ from rest_framework import viewsets
 class HourSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hour
-        fields = ('id', 'name')
+        fields = ('id', 'timestamp', 'hour', 'energy')
