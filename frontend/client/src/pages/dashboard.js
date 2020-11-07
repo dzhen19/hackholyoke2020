@@ -14,9 +14,6 @@ function Dashboard() {
             <Container>
                 <Row>
                     <Col>
-                        {Hours()}
-                    </Col>
-                    <Col>
                         {UserInput()}
                     </Col>
                     <Col>

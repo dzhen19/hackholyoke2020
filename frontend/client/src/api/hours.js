@@ -11,9 +11,5 @@ export default function Hours() {
             }
         )}, [])
 
-    return (
-        <div>
-            {JSON.stringify(hours)}
-        </div>
-    )
+    return (<div> </div>)
 }
