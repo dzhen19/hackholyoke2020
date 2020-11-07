@@ -1,6 +1,6 @@
 import React from 'react'
 import Graph from '../components/graph'
-import UserInput from '../components/userInput';
+import UserInput from '../components/UserInput/UserInput';
 import Hours from '../api/hours'
 import Navbar from '../components/Navbar/Navbar'
 import Container from 'react-bootstrap/Container'

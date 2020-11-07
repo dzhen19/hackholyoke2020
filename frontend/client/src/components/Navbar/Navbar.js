@@ -10,7 +10,7 @@ const nav = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         
         <Nav inline className="ml-auto">
-          <p id="greeting">Hi, FirstName LastName!</p>
+          {/*<p id="greeting">Hi, FirstName LastName!</p>*/}
           {/*<i class="fas fa-user-circle"></i>*/}
           <Button>Log Out</Button>
         </Nav>
