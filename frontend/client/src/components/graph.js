@@ -1,31 +1,34 @@
-import React, {useState} from 'react'
+import React from 'react'
+import {XYPlot, LineSeries,VerticalGridLines, HorizontalGridLines 
+    , XAxis, YAxis} from 'react-vis';
+import '../../node_modules/react-vis/dist/style.css';
+
 
 export default function Graph() {
-    const generateDataset = () => (
-        Array(10).fill(0).map(() => ([
-        Math.random() * 20 + 10,
-        Math.random() * 7 + 10,
-        ]))
-    )
-
-    const Circles = () => {
-        const [data, setData] = useState(generateDataset())
-        return (
-        <svg viewBox = '0 0 50 50'>
-            {data.map(([x, y], i) => (
-                <circle
-                cx={x}
-                cy={y}
-                r='1'
-                />
-            ))}
-        </svg>
-        )
-    }
-
-    return (
-        <div>
-        {Circles()}
+    const data = [
+        {x: 0, y: 8},
+        {x: 1, y: 5},
+        {x: 2, y: 4},
+        {x: 3, y: 9},
+        {x: 4, y: 1},
+        {x: 5, y: 7},
+        {x: 6, y: 6},
+        {x: 7, y: 3},
+        {x: 8, y: 2},
+        {x: 9, y: 0}
+      ];
+      return (
+        <div className="App">
+          <XYPlot height={300} width={300}>
+          <VerticalGridLines />
+            <HorizontalGridLines />
+            <XAxis />
+            <YAxis />
+            <LineSeries data={data} />
+          </XYPlot>
         </div>
-    )
+      );
+    // return (
+    //   <div id='vis-container' ref={refElement} />
+    // );
 }
