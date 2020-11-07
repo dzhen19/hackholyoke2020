@@ -1,17 +1,19 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
 export default function Hours() {
     const [hours, setHours] = useState([])
-    axios.get('/hours').then(
-        (res) => {
-            setHours(res)
-            console.log(res)
-        }
-    )
+
+    useEffect(
+        () => {axios.get('/hours').then(
+            (res) => {
+                setHours(res)
+            }
+        )}, [])
+
     return (
         <div>
-           {hours} 
+            {JSON.stringify(hours)}
         </div>
     )
 }

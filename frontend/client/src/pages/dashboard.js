@@ -7,12 +7,14 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
 function Dashboard() {
-    Hours();
     return (
         <div>
             <h1>Dashboard</h1>
             <Container>
                 <Row>
+                    <Col>
+                        {Hours()}
+                    </Col>
                     <Col>
                         {UserInput()}
                     </Col>
