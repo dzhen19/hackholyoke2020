@@ -20,12 +20,8 @@ function App() {
   // }
 
   return (
-<<<<<<< HEAD
       <Router>
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
           <Route path="/">
             <Dashboard />
           </Route>
@@ -33,19 +29,5 @@ function App() {
     </Router>
     )
   }
-  function About() {
-    return <h2>About</h2>;
-  }
-=======
-    <div className="App">
-<<<<<<< HEAD
-      <h1>btu</h1>
-=======
-      {Graph()}
->>>>>>> 38bd2f52c3db90a631a8384a298c53f773208142
-    </div>
-  );
-}
->>>>>>> 83cdc676ec77d561935d9bd899882f0a00082ab0
 
 export default App;
