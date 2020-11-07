@@ -5,8 +5,8 @@ export default function Hours() {
     const [hours, setHours] = useState([])
     axios.get('/hours').then(
         (res) => {
-            setHours(res),
-            // console.log(res)
+            setHours(res)
+            console.log(res)
         }
     )
     return (
