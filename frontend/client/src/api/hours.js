@@ -1,15 +1,17 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 
-export default function hours() {
+export default function Hours() {
+    const [hours, setHours] = useState([])
     axios.get('/hours').then(
         (res) => {
-            console.log(res.data)
+            setHours(res),
+            // console.log(res)
         }
     )
     return (
         <div>
-            
+           {hours} 
         </div>
     )
 }

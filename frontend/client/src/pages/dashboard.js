@@ -1,13 +1,13 @@
 import React from 'react'
 import Graph from '../components/graph'
 import UserInput from '../components/userInput';
-import hours from '../api/hours'
+import Hours from '../api/hours'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
 function Dashboard() {
-    hours();
+    Hours();
     return (
         <div>
             <h1>Dashboard</h1>
