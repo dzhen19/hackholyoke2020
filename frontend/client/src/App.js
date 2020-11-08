@@ -14,9 +14,11 @@ function App() {
     <Navbar />
       <Router>
         <Switch>
-          <Route path="/">
+          <Route path="/register">
             <Register />
-            {/*<Dashboard />*/}
+            </Route>
+          <Route path="/">
+            <Dashboard />
           </Route>
         </Switch>
     </Router>
