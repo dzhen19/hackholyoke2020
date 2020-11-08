@@ -5,9 +5,12 @@ import {
   Route,
 } from "react-router-dom";
 import Dashboard from './pages/dashboard'
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
+    <div>
+    <Navbar />
       <Router>
         <Switch>
           <Route path="/">
@@ -15,6 +18,7 @@ function App() {
           </Route>
         </Switch>
     </Router>
+    </div>
     )
   }
 

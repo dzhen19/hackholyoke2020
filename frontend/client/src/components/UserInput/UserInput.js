@@ -1,15 +1,14 @@
 import React, {useState} from 'react'
 import HourInput from '../HourInput/HourInput'
-import './style.css'
+import './userInput.css'
 
-export default function UserInput() {
-    const hours = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+export default function UserInput(updateEnergy, state) {
+    const hours = (Object.keys(state))
     return (
-        <div>
-        
+        <div style={{overflowY:'scroll', overflowX:'hidden', height:'80vh'}}>        
             {
-                hours.map(hour => {
-                    return HourInput(hour)
+                hours.map( (hour) => {
+                    return HourInput(hour, state[hour], updateEnergy)
                 })
             }
             
