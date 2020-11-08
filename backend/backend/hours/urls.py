@@ -9,6 +9,7 @@ router.register(r'hours', views.HourViewSet)
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
+    path('fill_hours', views.fill_hours),
     path('get_avg', views.get_avg),
     path('get_week', views.get_week),
     path('get_today', views.get_today),

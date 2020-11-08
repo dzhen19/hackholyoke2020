@@ -62,6 +62,17 @@ def get_week(request):
     serializer = HourSerializer(queryset, many=True)
     return JsonResponse({'week': response}, safe=False, status=status.HTTP_200_OK)
 
+
+def fill_hours(request):
+    payload = json.loads(request.body)
+    result = []
+    lst = payload["lst"]
+    for i in range(len(lst)):
+        hour = Hour(hour=i+8, energy=lst[i])
+        result.append(str(hour.energy))
+        hour.save()
+    return JsonResponse({'result': result}, safe=False, status=status.HTTP_200_OK)
+
 def avg(lst):
     if len(lst) == 0:
         return 0
