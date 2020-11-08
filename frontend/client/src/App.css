@@ -2,4 +2,7 @@
 body{
   color:black;
 }
+:root{
+  /* filter: invert(85%); */
+}
  

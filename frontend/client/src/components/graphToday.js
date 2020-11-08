@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import "../../node_modules/react-vis/dist/style.css";
 
 import {
   XYPlot,
   LineSeries,
+  AreaSeries,
   VerticalBarSeries,
   VerticalGridLines,
   HorizontalGridLines,
   XAxis,
   Crosshair,
   YAxis,
+  GradientDefs,
 } from "react-vis";
 
 export default function GraphToday(data) {
-  const [graphStyle, setGraphStyle] = useState("line");
+  const [graphStyle, setGraphStyle] = useState("area");
   const [CH, setCH] = useState([]);
   const _onMouseLeave = () => {
     setCH([]);
@@ -32,33 +34,55 @@ export default function GraphToday(data) {
             _onNearestX(datapoint, event);
           }}
           data={data}
-          animation={'noWobble'}
+          animation={"gentle"}
+          color={'url(#CoolGradient)'}
         />
       );
     } else if (graphStyle === "line") {
       return (
         <LineSeries
-          {...{ animation: { damping: 9, stiffness:300} }}
+          {...{ animation: { damping: 9, stiffness: 300 } }}
           onNearestX={(datapoint, event) => {
             _onNearestX(datapoint, event);
           }}
           curve={"curveMonotoneX"}
           data={data}
+          animation={"gentle"}
+          color={'url(#CoolGradient)'}
         />
       );
+    }else if (graphStyle==='area'){
+      return (
+        <AreaSeries
+          {...{ animation: { damping: 9, stiffness: 300 } }}
+          onNearestX={(datapoint, event) => {
+            _onNearestX(datapoint, event);
+          }}
+          curve={"curveMonotoneX"}
+          data={data}
+          animation={"gentle"}
+          color={'url(#CoolGradient)'}
+        />
+      )
     }
   };
 
   return (
     <div className="App">
-      <h1>Your Energy Levels Today</h1>
-      <Button onClick={() => setGraphStyle("bar")}>bar</Button>
+      <Button onClick={() => setGraphStyle("area")}>area</Button>
       <Button onClick={() => setGraphStyle("line")}>line</Button>
-      <XYPlot onMouseLeave={_onMouseLeave} height={300} width={500}>
+      <Button onClick={() => setGraphStyle("bar")}>bar</Button>
+      <XYPlot onMouseLeave={_onMouseLeave} height={500} width={700}>
         <VerticalGridLines />
         <HorizontalGridLines />
         <XAxis />
         <YAxis />
+        <GradientDefs>
+          <linearGradient id="CoolGradient" x1="0" x2="0.5" y1="0" y2="1">
+            <stop offset="0%" stopColor="red" stopOpacity={0.4} />
+            <stop offset="100%" stopColor="blue" stopOpacity={0.3} />
+          </linearGradient>
+        </GradientDefs>
         {plot()}
         <Crosshair values={CH} />
       </XYPlot>
