@@ -13,12 +13,19 @@ const register = () => {
     <div>
       <Container fluid>
         <Row className="spacing">
-          <Col id="description" md={8} style={{background:'url(https://i.pinimg.com/originals/a5/de/ac/a5deac9846be58592867b207bb214849.png) no-repeat'}}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis id consectetur purus ut faucibus pulvinar. Donec et odio pellentesque diam volutpat. Sed blandit libero volutpat sed. Euismod in pellentesque massa placerat duis ultricies. Vel quam elementum pulvinar etiam non. Posuere lorem ipsum dolor sit amet consectetur adipiscing. Morbi tristique senectus et netus et malesuada fames ac. Aliquam purus sit amet luctus venenatis lectus magna fringilla. Sit amet dictum sit amet.
-
-          Porta nibh venenatis cras sed. Ultrices mi tempus imperdiet nulla. Sem viverra aliquet eget sit amet tellus cras adipiscing enim. Turpis nunc eget lorem dolor sed viverra ipsum. Egestas sed sed risus pretium quam vulputate dignissim suspendisse in. Odio eu feugiat pretium nibh ipsum consequat. Lorem ipsum dolor sit amet consectetur adipiscing elit. Nec ultrices dui sapien eget mi proin sed libero enim. Imperdiet nulla malesuada pellentesque elit eget. Dui accumsan sit amet nulla facilisi morbi. Eget felis eget nunc lobortis mattis aliquam faucibus. In nisl nisi scelerisque eu ultrices vitae auctor. Eu consequat ac felis donec et odio pellentesque. Est ultricies integer quis auctor elit sed vulputate mi sit. Integer feugiat scelerisque varius morbi enim nunc faucibus a. Aliquam ultrices sagittis orci a scelerisque purus semper eget.
+          <Col id="description" md={8}>
+          <div id="desc-text">
+            <p><b>Hourly</b> is an app that helps you track your daily energy levels, analyze the results, and predict when your energy will peak. It allows you to shift meetings, errands, and other busywork to other times of the day – thus ensuring that your "Prime" never gets taken up by things you know you could do half-asleep.</p>
+            <p>If you're the type that likes to wake up early in the morning, maybe you find that your energy and ability to focus are at their highest peak during those early hours.
+            Or maybe you're a night owl – you find that you're on fire at 1 A.M., hacking away on a project while everyone else sleeps.
+            You can probably dredge up some basic answers to these questions from your memory. But what if you knew exactly when your energy level would hit its peak on an average day?</p>
+            <br />
+            <p>Created by Derrick Zhen, Rodas Jateno, and Zhihan Chen</p>
+          </div>
+          
+          
           </Col>
-          <Col md={3}>
+          <Col md={3} className="h-100">
             {/* <Form>
               <h2>Register</h2>
               <Form.Group controlId="first-name">
@@ -55,7 +62,7 @@ const register = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
               </Form.Group>
-              <Button variant="primary" type="submit" >
+              <Button variant="primary" type="submit" style={{ backgroundColor: "purple", opacity: "70%" }}>
                 Submit
               </Button>
             </Form>
