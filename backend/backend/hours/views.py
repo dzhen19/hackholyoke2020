@@ -46,3 +46,23 @@ def get_today(request):
 
     serializer = HourSerializer(queryset, many=True)
     return JsonResponse({'today': lst}, safe=False, status=status.HTTP_200_OK)
+
+def get_week(request):
+    lst = []
+    response = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+    queryset = Hour.objects.all()
+    for i in queryset:
+        if i.timestamp.date().isocalendar()[0:2] == datetime.datetime.today().date().isocalendar()[0:2]:
+            day_of_week = int(i.timestamp.date().weekday())
+            response[day_of_week] += i.energy
+        
+    response = {k: int(v / 7) for k, v in response.items()}         
+            
+
+    serializer = HourSerializer(queryset, many=True)
+    return JsonResponse({'week': response}, safe=False, status=status.HTTP_200_OK)
+
+def avg(lst):
+    if len(lst) == 0:
+        return 0
+    return sum(lst)/len(lst)
