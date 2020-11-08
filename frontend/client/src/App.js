@@ -4,7 +4,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Dashboard from './pages/dashboard'
+import Dashboard from './pages/dashboard';
+import Register from './pages/RegisterPage/Register';
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       <Router>
         <Switch>
           <Route path="/">
-            <Dashboard />
+            <Register />
+            {/*<Dashboard />*/}
           </Route>
         </Switch>
     </Router>
